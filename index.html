@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Easter Egg Page</title>
+    <style>
+        #hiddenVideo {
+            display: none;
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Page!</h1>
+    <p>There's a secret on this page. Can you find it?</p>
+    <div id="hiddenVideo">
+        <iframe id="videoIframe" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        var input = '';
+        var code = '770';
+        window.addEventListener('keydown', function(e) {
+            input += e.key;
+            input = input.substr(-code.length);
+            if (input === code) {
+                alert("Code entered correctly!");
+                document.getElementById('hiddenVideo').style.display = 'block';
+                document.getElementById('videoIframe').src = 'https://www.youtube.com/embed/https://www.youtube.com/watch?v=YMNqrW_UvNs?autoplay=1';
+            }
+        });
+    </script>
+</body>
+</html>
